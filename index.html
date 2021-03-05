@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<title>Online Calculator</title>
+
+<head>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      border: 0;
+      background-color: black;
+    }
+  </style>
+  <canvas id="c1"></canvas>
+  <script src="sketch.js"></script>
+  <!-- Open the div only if you have guts-->
+  <div>
+  <style>
+    .button {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 40px;
+    }
+  </style>
+  <input type="button" class="button" id="b1" value="1">
+  <style>
+    .button1 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 50px;
+      top: 40px;
+    }
+  </style>
+  <input type="button" class="button1" id="b2" value="2">
+  <style>
+    .button2 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 100px;
+      top: 40px;
+    }
+  </style>
+  <input type="button" class="button2" id="b3" value="3">
+  <style>
+    .button3 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 150px;
+      top: 40px;
+    }
+  </style>
+  <input type="button" class="button3" id="b4" value="4">
+  <style>
+    .button5 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 200px;
+      top: 40px;
+    }
+  </style>
+  <input type="button" class="button5" id="b5" value="5">
+  <style>
+    .button6 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      top: 100px;
+    }
+  </style>
+  <input type="button" class="button6" id="b6" value="6">
+  <style>
+    .button7 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 50px;
+      top: 100px;
+    }
+  </style>
+  <input type="button" class="button7" id="b7" value="7">
+  <style>
+    .button8 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+  <input type="button" class="button8" id="b8" value="8">
+  <style>
+    .button9 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 150px;
+      top: 100px;
+    }
+  </style>
+  <input type="button" class="button9" id="b9" value="9">
+  <style>
+    .button0 {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 200px;
+      top: 100px;
+    }
+  </style>
+  <input type="button" class="button0" id="b0" value="0">
+  <style>
+    .multiply {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      top: 160px;
+    }
+  </style>
+  <input type="button" class="multiply" id="b*" value="×">
+  <style>
+    .divide {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 50px;
+      top: 160px;
+    }
+  </style>
+  <input type="button" class="divide" id="b/" value="÷">
+  <style>
+    .add {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 100px;
+      top: 160px;
+    }
+  </style>
+  <input type="button" class="add" id="b+" value="+">
+  <style>
+    .subtract {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 150px;
+      top: 160px;
+    }
+  </style>
+  <input type="button" class="subtract" id="b-" value="-">
+  <style>
+    .equals {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 200px;
+      top: 160px;
+    }
+  </style>
+  <input type="button" class="equals" id="b=" value="=">
+  <style>
+    .floor {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 50px;
+      top: 220px;
+    }
+  </style>
+  <input type="button" class="floor" id="bf" value="⌊⋅⌋">
+<style>
+  .ceil {
+    background-color: rgb(44, 8, 102);
+    color: gold;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    top: 220px;
+  }
+</style>
+<input type="button" class="ceil" id="bc" value="⌈⋅⌉">
+<style>
+  .cbrt {
+    background-color: rgb(44, 8, 102);
+    color: gold;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 200px;
+    top: 220px;
+  }
+</style>
+<input type="button" class="cbrt" id="bcb" value="√2">
+<style>
+  .abs {
+    background-color: rgb(44, 8, 102);
+    color: gold;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 100px;
+    top: 220px;
+  }
+</style>
+<input type="button" class="abs" id="ba" value="|⋅|">
+<style>
+  .sqrt {
+    background-color: rgb(44, 8, 102);
+    color: gold;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 150px;
+    top: 220px;
+  }
+</style>
+<input type="button" class="sqrt" id="bs" value="√">
+<style>
+    .sin {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="sin" id="bsin" value="sin">
+  <style>
+    .cos {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 50px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="cos" id="bcos" value="cos">
+  <style>
+    .tan {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 100px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="tan" id="btan" value="tan">
+  <style>
+    .pi {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 150px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="pi" id="bpi" value="π">
+  <style>
+    .prob {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      position: absolute;
+      left: 200px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="prob" id="b!" value="!">
+</div>
+  <style>
+    .dungibu {
+      border: none;
+      color: gold;
+      position: absolute;
+      width: 150px;
+      height: 20px;
+      left: 45px;
+      top: 340px;
+      text-align: right;
+      background-color: black;
+    }
+  </style>
+  <input type="text" class='dungibu' placeholder='0' id='n1' value="">
+<style>
+    .point {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 100px;
+      padding: 9px 5px;
+      cursor: pointer;
+      position: absolute;
+      left: 240px;
+      top: 280px;
+    }
+  </style>
+  <input type="button" class="point" id="b." value=".">
+  <style>
+    .pointoo {
+      background-color: rgb(44, 8, 102);
+      color: gold;
+      border: none;
+      border-radius: 10px;
+      padding: 7px 100px;
+      cursor: pointer;
+      position: absolute;
+      left: 1px;
+      top: 5px;
+    }
+  </style>
+  <input type="button" class="pointoo" id="bclear" value="clear">
+</div>
+
+
+</head>
+
+</html>
